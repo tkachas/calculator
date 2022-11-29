@@ -14,7 +14,6 @@ let exp = '';
 let allOperators = ['+', '-', '/', '=', '*', ')', '('];
 
 
-
 del.addEventListener('click', ()=> {
     res.innerText = '';
     exp = '';
@@ -32,6 +31,14 @@ for (let i = 0; i < actions.length; i++) {
             res.innerText = '';
             dispCount(exp);
             }
+        }
+        if (exp.length > 12 && exp.length < 21) {
+            res.style.fontSize = "x-large";
+        } else if (exp.length > 20){
+            res.style.fontSize = "large";
+        }
+        else {
+            res.style.fontSize = "xx-large";
         }
     });
 }

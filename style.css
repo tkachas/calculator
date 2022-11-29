@@ -4,15 +4,16 @@ body {
 
 .field {
     width: 500px;
-    max-height: 525px;
+    min-height: 625px;
     position: relative;
     margin-left: 20%;
+    margin-top: 10%;
+    border: 0.1px solid black;
+    background-color: rgba(0,0,0,0.1);
 }
 .result {
     width: 500px;
     min-height: 100px;
-    margin-left: 20%;
-    margin-top: 10%;
     margin-bottom: 5px;
     position: relative;
     top: 0;
@@ -22,12 +23,12 @@ body {
     font-size: xx-large;
     border: 0.5px solid black;
     background-color: rgba(0,0,0,0.1);
+    word-wrap: break-word;
 }
 
 .numbers {
     height: 400px;
     width: 100%;
-    background-color: #fff;
     position: relative;
     display: flex;
     flex-flow: row wrap;
@@ -35,7 +36,7 @@ body {
 }
 
 #number {
-    background-color: gray;
+    background-color: rgba(0,0,0, 0.3);
     width: 120px;
     margin-left: 5px;
     margin-right: 5px;
@@ -55,22 +56,21 @@ body {
     position: relative;
     height: 100px;
     width: 500px;
-    background-color: #fff;
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
 }
 
 #operator {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     background-color: orange;
     font-size: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: 1px solid black;
+    border: 0.2px solid black;
 }
 
 .bracketL {
@@ -97,17 +97,21 @@ body {
 }
 
 .disp {
-    width: 60%;
-    height: 90%;
+    width: 300px;
+    min-height: 50px;
     color: black;
     position: relative;
-    word-wrap: break-word;
     margin: 10px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: start;
+    align-items:flex-end;
+    flex-flow: row wrap;
 }
 
 .del {
     width: 50px;
-    height: 50px;
+    min-height: 50px;
     position: relative;
     cursor: pointer;
     background-color: gray;
