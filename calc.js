@@ -52,7 +52,12 @@ equal.addEventListener('click', () => {
     // res.innerText = reversePolish(toPostfix(exp));
     let postArr = toPostfix(exp).replace(/\s+/g, ' ').trim().split(" ");
     exp = fixLast(postArr).join(' ');
-    res.innerText = reversePolish(exp);
+    if (String(reversePolish(exp)) != 'NaN') {
+        console.log(typeof String(reversePolish(exp)));
+        res.innerText = reversePolish(exp);
+    } else {
+        res.innerText = 'Wrong expression';
+    }
     exp = '';
 });
 
