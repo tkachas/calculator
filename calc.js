@@ -22,13 +22,13 @@ del.addEventListener('click', ()=> {
 for (let i = 0; i < actions.length; i++) {
     actions[i].addEventListener('click', () => {
         if (!~allOperators.indexOf(actions[i].innerText)) {
-            if (exp.length < 28) {
+            // if (exp.length < 45) {
                 exp = exp + actions[i].innerText;
                 res.innerText = '';
                 dispCount(exp);
-            }
+            // }
         } else {
-            if (exp !== '' && exp.length < 28) {
+            if (exp !== '') {
                 exp = exp + " " + actions[i].innerText + " ";
                 res.innerText = '';
                 dispCount(exp);
@@ -53,7 +53,6 @@ equal.addEventListener('click', () => {
     let postArr = toPostfix(exp).replace(/\s+/g, ' ').trim().split(" ");
     exp = fixLast(postArr).join(' ');
     if (String(reversePolish(exp)) != 'NaN') {
-        console.log(typeof String(reversePolish(exp)));
         res.innerText = reversePolish(exp);
     } else {
         res.innerText = 'Wrong expression';
@@ -77,8 +76,13 @@ function fixLast(postArr) {
             num += last[i];
         }
     }
-    postArr[postArr.indexOf(last)] = num;
 
+    postArr[postArr.indexOf(last)] = num;
+    for (let i = 0; i < postArr.length; i++) {
+        if (postArr[i] == "") {
+            postArr.splice(i,1);
+        }
+    }
 
     return postArr
 }
