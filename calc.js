@@ -1,4 +1,4 @@
-
+'use strict';
 let numbers = document.querySelectorAll('#number');
 let res = document.querySelector('.disp');
 let equal = document.querySelector('.equal');
