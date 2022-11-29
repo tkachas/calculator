@@ -22,20 +22,24 @@ del.addEventListener('click', ()=> {
 for (let i = 0; i < actions.length; i++) {
     actions[i].addEventListener('click', () => {
         if (!~allOperators.indexOf(actions[i].innerText)) {
-            exp = exp + actions[i].innerText;
-            res.innerText = '';
-            dispCount(exp);
+            if (exp.length < 28) {
+                exp = exp + actions[i].innerText;
+                res.innerText = '';
+                dispCount(exp);
+            }
         } else {
-            if (exp !== '') {
-            exp = exp + " " + actions[i].innerText + " ";
-            res.innerText = '';
-            dispCount(exp);
+            if (exp !== '' && exp.length < 28) {
+                exp = exp + " " + actions[i].innerText + " ";
+                res.innerText = '';
+                dispCount(exp);
             }
         }
         if (exp.length > 12 && exp.length < 21) {
             res.style.fontSize = "x-large";
         } else if (exp.length > 20){
             res.style.fontSize = "large";
+        } else if (exp.length > 28) {
+            res.style.fontSize = "xx-small";
         }
         else {
             res.style.fontSize = "xx-large";

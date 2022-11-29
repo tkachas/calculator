@@ -4,17 +4,18 @@ body {
 
 .field {
     width: 500px;
-    min-height: 625px;
+    min-height: 500px;
     position: relative;
     margin-left: 20%;
     margin-top: 10%;
     border: 0.1px solid black;
     background-color: rgba(0,0,0,0.1);
+    display: flex;
+    flex-flow: row wrap;
 }
 .result {
-    width: 500px;
+    width: 399px;
     min-height: 100px;
-    margin-bottom: 5px;
     position: relative;
     top: 0;
     display: flex;
@@ -28,7 +29,7 @@ body {
 
 .numbers {
     height: 400px;
-    width: 100%;
+    width: 400px;
     position: relative;
     display: flex;
     flex-flow: row wrap;
@@ -37,10 +38,8 @@ body {
 
 #number {
     background-color: rgba(0,0,0, 0.3);
-    width: 120px;
-    margin-left: 5px;
-    margin-right: 5px;
-    height: 100px;
+    width: 132.3px;
+    height: 99px;
     font-size: 2em;
     display: flex;
     justify-content: center;
@@ -48,21 +47,20 @@ body {
     cursor: pointer;
     border: 0.5px solid black;
 }
-.common:hover, #operator:hover, .del:hover {
+.common:hover, #operator:hover, .del:hover, .equal:hover {
     color: white;
 }
 
 .operations {
-    position: relative;
-    height: 100px;
-    width: 500px;
+    height: 400px;
+    width: 99px;
     display: flex;
     justify-content: space-around;
-    margin-top: 15px;
+    flex-direction: column;
 }
 
 #operator {
-    width: 100px;
+    width: 99px;
     height: 100px;
     background-color: orange;
     font-size: 2em;
@@ -100,19 +98,22 @@ body {
     width: 300px;
     min-height: 50px;
     color: black;
-    position: relative;
+    position: absolute;
     margin: 10px;
     border: 1px solid #000;
     display: flex;
     justify-content: start;
     align-items:flex-end;
     flex-flow: row wrap;
+    padding: 10px;
+    right: 60px;
+    letter-spacing: 2px;
 }
 
 .del {
     width: 50px;
     min-height: 50px;
-    position: relative;
+    position: absolute;
     cursor: pointer;
     background-color: gray;
     display: flex;
@@ -121,4 +122,23 @@ body {
     border-radius: 10px;
     font-size: x-large;
     border: 0.1px solid black;
+    right: 10px;
+}
+.equal {
+    align-self: flex-end;
+    position: absolute;
+    right: 0;
+    border: 0px solid black;
+    width: 99px;
+    height: 100px;
+    background-color: orange;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-left: 1px solid black;
+    border-bottom: 0.5px solid #000;
+    border-top: 0.5px solid #000;
+    top: 0;
 }
