@@ -177,6 +177,9 @@ body {
         font-family: 'Courier New', Courier, monospace;
         font-weight: 530;
     }
+    canvas {
+        display: none;
+    }
     .field {
         position: absolute;
         min-height: 65%;
